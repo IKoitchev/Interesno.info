@@ -1,0 +1,19 @@
+.nvbr-container {
+    margin: 0px;
+    margin-bottom: 30px;
+    height: 30px;
+    line-height: 34px;
+    text-align: center;
+  }
+.navbar .navbar-brand {
+    color: red;
+  }
+nav .navbar-nav a {
+    color: crimson;
+    vertical-align: middle;
+    display: inline;
+    font-size: large;
+  }
+#navbar{
+    background-color: rgb(189, 177, 245);
+}

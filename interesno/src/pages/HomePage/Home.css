@@ -1,0 +1,15 @@
+.page-container{
+    border-style: solid;
+    border-color: black;
+    margin: 20px;
+    margin-top: 50px;
+}
+
+.column{
+    border-style: solid;
+    border-color: red;
+    width: 33.3%;
+    min-width: 300px;
+    display: inline-block;
+
+}
