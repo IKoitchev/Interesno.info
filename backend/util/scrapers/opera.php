@@ -16,10 +16,11 @@ $table2 = $ini['date_table'];
 
 $contents = browse($url, '0.html');
 
-
-preg_match_all("/(https:\/\/www.operasofia.bg\/repertoire\/\d+)\">/", $contents, $match);
+//preg_match_all("/(https:\/\/www.operasofia.bg\/repertoire\/\d+)\">/", $contents, $match);
+preg_match_all("/<article.*?(https:\/\/www.operasofia.bg\/repertoire\/\d+)\">.*?(?:(?:buy-tickets)|(?:choose-date)).*?<\/article>/s", $contents, $match);
 $all_prod = array();
-
+//print_r($match);
+//exit;
 foreach ($match[1] as $itemlink) {
 	$result1 = array();
 	
@@ -85,7 +86,8 @@ foreach ($match[1] as $itemlink) {
 		echo $itemlink . "\n";
 	}
 }
-file_put_contents($ini['res_path'] . 'mongo.txt', json_encode($all_prod));
+
+file_put_contents($ini['res_path'] . $ini['prod_opera'], json_encode($all_prod));
 
 //save ini
 unlink($INI_FILE);
@@ -109,10 +111,13 @@ function browse($url, $file) {
 	global $ini;
 	if($mode != 1) {
 		$contents = file_get_contents($url);
-		if($mode == 2)
-			file_put_contents($ini['res_path'] . '/cash/' . $file, $contents);
+		if($mode == 2) {
+			if(!file_exists($ini['res_path'] . 'cache/'))
+				mkdir($ini['res_path'] . 'cache/', 0777, true);
+			file_put_contents($ini['res_path'] . 'cache/' . $file, $contents);
+		}
 	} else {
-		$contents = file_get_contents($ini['res_path'] . '/cash/' . $file);
+		$contents = file_get_contents($ini['res_path'] . 'cache/' . $file);
 	}
 	return $contents;
 }

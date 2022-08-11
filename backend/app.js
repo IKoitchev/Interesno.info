@@ -4,6 +4,7 @@ const articleRoutes = require('./routes/articleRoutes');
 const imageRoutes = require('./routes/imageRoutes');
 const productionRoutes = require('./routes/productionRoutes');
 const mongoConnect = require('./util/database').mongoConnect;
+const timer = require('./util/helpers/timer');
 
 const app = express();
 const PORT = 3005;
@@ -19,6 +20,6 @@ app.use((req, res, next) => {
 });
 
 mongoConnect((client) => {
-  //console.log(client);
   app.listen(PORT, () => console.log(`running on http://localhost:${PORT}`));
+  timer.executePeriodically();
 });

@@ -2,20 +2,18 @@ const { getDB } = require('../database');
 const fs = require('fs');
 const path = require('path');
 
-const filePath = path.join(path.resolve('util', 'scrapers', 'mongo.txt'));
-
-saveToDb = () => {
+saveToDb = (collection) => {
   const db = getDB();
 
   return db
-    .collection('productions')
-    .insertMany(readFile())
+    .collection(collection)
+    .insertMany(readFile(collection))
     .then((result) => {
       console.log(result);
     })
     .catch((err) => console.log(err));
 };
-
+//opera only
 getAllProductions = (filter = null) => {
   const db = getDB();
 
@@ -29,8 +27,10 @@ getAllProductions = (filter = null) => {
     })
     .catch((err) => console.log(err));
 };
+//add for theatre
 
-readFile = () => {
+readFile = (filename) => {
+  const filePath = path.join(path.resolve('scrapedData', filename + '.txt'));
   const a = fs.readFileSync(filePath);
 
   return JSON.parse(a);
