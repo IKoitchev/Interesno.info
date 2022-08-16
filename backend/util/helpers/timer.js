@@ -5,7 +5,7 @@ const saveToDb = require('./fileHandler').saveToDb;
 
 const collections = ['prod_opera', 'prod_theatre'];
 
-executePeriodically = (interval = 120000) => {
+executePeriodically = (interval = 12000000) => {
   setInterval(scrapeData, interval);
 };
 

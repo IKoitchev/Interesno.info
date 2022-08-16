@@ -1,4 +1,5 @@
 const fileHandler = require('../util/helpers/fileHandler');
+const Production = require('../models/production');
 
 exports.saveAll = (req, res, next) => {
   fileHandler.saveToDb();
@@ -6,7 +7,7 @@ exports.saveAll = (req, res, next) => {
 };
 
 exports.getAll = (req, res, next) => {
-  fileHandler
-    .getAllProductions()
-    .then((result) => res.status(200).send(result));
+  const products = Production.getAll().then((result) => {
+    res.status(200).send(result);
+  });
 };

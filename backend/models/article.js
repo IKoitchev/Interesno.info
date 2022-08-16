@@ -24,10 +24,10 @@ class Article {
       .collection('articles')
       .find()
       .toArray()
-      .then((products) => {
+      .then((articles) => {
         // console.log('--------------------------------------');
-        // console.log(products);
-        return products;
+        // console.log(articles);
+        return articles;
       })
       .catch((err) => {
         console.log(err);
