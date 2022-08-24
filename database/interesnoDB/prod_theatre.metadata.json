@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"fb3450983b6f4fb5b1e70dbf9be34392","collectionName":"prod_theatre","type":"collection"}

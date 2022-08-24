@@ -5,12 +5,17 @@ const imageRoutes = require('./routes/imageRoutes');
 const productionRoutes = require('./routes/productionRoutes');
 const mongoConnect = require('./util/database').mongoConnect;
 const timer = require('./util/helpers/timer');
+const cors = require('cors');
 
 const app = express();
 const PORT = 3005;
 
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+  })
+);
 app.use('/articles', articleRoutes);
 app.use('/images', imageRoutes);
 app.use('/productions', productionRoutes);

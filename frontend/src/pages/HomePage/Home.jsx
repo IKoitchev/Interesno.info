@@ -14,13 +14,13 @@ function HomePage() {
 
       <div className="page-container">
         <div className="column">
-          <ArticleColumn contentType="randomArticles" />
+          <TemperatureColumn>3</TemperatureColumn>
         </div>
         <div className="column">
           <ArticleColumn contentType="newArticles" />
         </div>
         <div className="column">
-          <TemperatureColumn>3</TemperatureColumn>
+          <ArticleColumn contentType="randomArticles" />
         </div>
       </div>
     </>

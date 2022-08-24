@@ -20,7 +20,7 @@ exports.save = (req, res, next) => {
 };
 
 exports.getAll = (req, res, next) => {
-  const products = Article.fetchAll().then((result) => {
-    res.send(200, { products: result });
+  const articles = Article.fetchAll().then((result) => {
+    res.send(200, { articles: result });
   });
 };
