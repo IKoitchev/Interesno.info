@@ -1,11 +1,11 @@
 <?php
 
-$INI_FILE = 'scripts.ini';
+$INI_FILE = '../../scripts.ini';
 
 //used in browse($url, file)
 $ini = parse_ini_file($INI_FILE);
-// print_r($ini);
-// exit;
+//print_r($ini);
+//exit;
 $mode = $ini['mode']; //0: browse from site; 1: browse from local files; 2: from site and save to local file
 
 $base = 'https://www.operasofia.bg/';

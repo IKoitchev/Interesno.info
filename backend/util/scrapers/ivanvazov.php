@@ -1,6 +1,6 @@
 <?php
 
-$INI_FILE = 'scripts.ini';
+$INI_FILE = '../../scripts.ini';
 
 $ini = parse_ini_file($INI_FILE);
 
@@ -47,7 +47,6 @@ foreach($pages as $i => $page) {
 		echo $lnk . "\n";
 	}
 }
-
 file_put_contents($ini['res_path'] . $ini['prod_theatre'], json_encode(array_values($all_prod)));
 
 //save ini
