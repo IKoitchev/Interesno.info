@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage/Home';
-import NotFound from './pages/notFound';
-import FindProductionPage from './pages/FindProduction/find-production-page';
+import NotFound from './pages/NotFound';
+import FindProductionPage from './pages/FindProduction/FindProductionPage';
 
 function App() {
   return (

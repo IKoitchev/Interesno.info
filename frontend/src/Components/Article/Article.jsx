@@ -1,8 +1,8 @@
 import React from 'react';
 import './Article.css';
 import Carousel from 'react-bootstrap/Carousel';
-import { BASE_URL } from '../../util/BaseApi';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { baseURL } from '../../service/baseApi';
 
 function Article({ article }) {
   return (
@@ -19,7 +19,7 @@ function Article({ article }) {
                 <div className="img-container">
                   <img
                     className="carousel-img"
-                    src={`${BASE_URL}/images/${a}`}
+                    src={`${baseURL}/images/${a}`}
                     alt="image not found"
                   />
                 </div>
