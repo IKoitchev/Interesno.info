@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function NavBar() {
   return (
     <div className="nvbr-container">
-      <Navbar id="navbar" variant="white">
+      <Navbar id="navbar" variant="light">
         <Navbar.Brand> LOGO</Navbar.Brand>
         <Nav>
           <Nav.Link href="/">Home</Nav.Link>

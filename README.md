@@ -20,10 +20,17 @@ Then run 'npm install' inside the respective app folder (frontend or backend)
 
 ## Database
 
-For the database, you need to have mongoserver and mongo tools installed. Preferably also MongoDBCompass for convinience.
-Open a terminal and run "mongorestore -d interesnoDB2 (path)" where '(path)' is the path to the database folder of the repo
-For example:
-C:\GIT\Interesno.info\database\interesnoDB
+To start the database, run `docker compose up -d` in the root directory of the project. This will expose the database on port `27017`. To browse the database, you can use the admin tool which will be accessible on port `8081`.
+
+Note that you need to have Docker for this step.
+
+### Using the images
+
+You can build both the backend and frontend using their respective Docker images by running `docker build -t <your-image-name> .` in the respective folder, followed by:
+
+- `docker run --env MONGO_DB_HOST=host.docker.internal <your-image-name>` in the backend folder
+
+- `docker run -p 3000:3000 <your-image-name>` in the frontend folder
 
 ## PHP (Optional)
 
