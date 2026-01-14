@@ -6,6 +6,8 @@ RUN npm install
 
 COPY . .
 
+RUN apk add --no-cache php
+
 EXPOSE 3005
 
 # ENV HOST=host.docker.internal
